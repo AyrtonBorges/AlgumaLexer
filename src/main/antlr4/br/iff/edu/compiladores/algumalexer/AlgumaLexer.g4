@@ -1,7 +1,23 @@
 lexer grammar AlgumaLexer;
 
-PALAVRAS_CHAVES: 'criarPagina' | 'fimPagina' | 'criarBotao' | 'criarTexto';
+PAGE: 'CRIARPAGINA''('')'
+        HEADER
+        CORPO
+        PERNAS
+      'FIMPAGINA';
 
+HEADER: 'CABECA''('STRING')'
+            
+        'FIMCABECA';
+
+CORPO: 'CORPO';
+
+PERNAS: '';
+
+CARACTERE: ('a'..'z'|'A'..'Z'|'0'..'9' | '!' | '@' | '#' | '$' | '%' | '&' | '*' | ',' | '.');
+
+STRING: '“'CARACTERE+'”';    
+    
 NUMINT: ('+'|'-')? ('0'..'9')+;
 
 NUMREAL: ('+'|'-')? ('0'..'9')+ '.' ('0'..'9')+;
