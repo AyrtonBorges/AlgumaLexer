@@ -1,18 +1,6 @@
-lexer grammar AlgumaLexer;
+lexer grammar AlgumaLexer;            
 
-PAGE: 'CRIARPAGINA''('')'
-        HEADER
-        CORPO
-        PERNAS
-      'FIMPAGINA';
-
-HEADER: 'CABECA''('STRING')'
-            
-        'FIMCABECA';
-
-CORPO: 'CORPO';
-
-PERNAS: '';
+PALAVRAS_CHAVES: 'CRIARPAGINA' | 'FIMPAGINA' | 'CABECA' | 'MENU' | 'LINK' | 'FIM_MENU' | 'SELO' | 'FIM_CABECA' | 'CORPO' | 'IMAGEM' | 'TEXTO' | 'TITULO' | 'PARAGROFO' | 'FIM_TEXTO' | 'FIM_CORPO' | 'PERNAS' | 'ICONE' | 'PARAGRAFO' | 'FIM_PERNAS'| 'preto';
 
 CARACTERE: ('a'..'z'|'A'..'Z'|'0'..'9' | '!' | '@' | '#' | '$' | '%' | '&' | '*' | ',' | '.');
 
@@ -38,3 +26,33 @@ ABREPAR: '(';
 FECHAPAR: ')';
 
 WS: (' ' | '\t' | '\r' | '\n') -> skip;
+
+page: 'CRIARPAGINA''('')'
+        header
+        corpo
+        pernas
+      'FIM_PAGINA'EOF;
+
+header: 'CABECA''('STRING')'
+            
+        'FIM_CABECA';
+
+corpo: 'CORPO''('STRING')'
+    
+        'FIM_CORPO';
+
+pernas: 'PERNAS''('STRING')'
+
+        'FIM_PERNAS';
+
+menu: 'MENU''('NUMINT')'
+        (link)
+      'FIM_MENU';
+
+cabeca_funcao: PALAVRAS_CHAVES ABREPAR atributo (',' atributo)* FECHAPAR
+
+               PALAVRAS_CHAVES;
+
+atributo: STRING | NUMINT ;
+
+link: 'LINK''('STRING','STRING')';

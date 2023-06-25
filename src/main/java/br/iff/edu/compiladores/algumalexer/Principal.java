@@ -20,7 +20,7 @@ public class Principal
         Token t = null;
         while((t = lex.nextToken()).getType() != Token.EOF)
         {
-            System.out.print("<"+AlgumaLexer.VOCABULARY.getDisplayName(t.getType())+","+t.getText()+">");
+            System.out.println("<"+AlgumaLexer.VOCABULARY.getDisplayName(t.getType())+","+t.getText()+">");
         }
     }
 }
