@@ -1,0 +1,4 @@
+criarPagina
+	criarTexto "Hello World"
+	criarBotao
+fimPagina
