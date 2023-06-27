@@ -1,23 +1,8 @@
-CRIARPAGINA(preto, tema = 1945)
-	CABECA()
-		MENU(3)
-			LINK(url, home)
-			LINK(url, home)
-			LINK(url, home)
-		FIM_MENU
-		SELO(url,1)
-	FIM_CABECA
-	CORPO()
-		IMAGEM(url, p)
-		IMAGEM(url, m)
-		IMAGEM(url, g)
-		TEXTO()
-			TITULO(“String”)
-			PARAGROFO(“String”)
-		FIM_TEXTO
-	FIM_CORPO()
-	PERNAS()
-ICONE(url,1)
-PARAGRAFO(“String)
-	FIM_PERNAS
-FIMPAGINA
+CRIARPAGINA()
+    CABECA()
+    FIM
+    CORPO()
+    FIM
+    PERNAS()
+    FIM
+FIM
