@@ -1,4 +1,4 @@
-// Generated from br\iff\edu\compiladores\algumalexer\Alguma.g4 by ANTLR 4.13.0
+// Generated from br/iff/edu/compiladores/algumalexer/Alguma.g4 by ANTLR 4.13.0
 package br.iff.edu.compiladores.algumalexer;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -17,17 +17,17 @@ public interface AlgumaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPage(AlgumaParser.PageContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link AlgumaParser#bloco_pagina}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBloco_pagina(AlgumaParser.Bloco_paginaContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link AlgumaParser#header}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitHeader(AlgumaParser.HeaderContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#menu}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMenu(AlgumaParser.MenuContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link AlgumaParser#corpo}.
 	 * @param ctx the parse tree
@@ -40,4 +40,64 @@ public interface AlgumaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPernas(AlgumaParser.PernasContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#funcoes}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFuncoes(AlgumaParser.FuncoesContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#texto}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTexto(AlgumaParser.TextoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#valor_texto}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitValor_texto(AlgumaParser.Valor_textoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#titulo}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTitulo(AlgumaParser.TituloContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#paragrafo}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParagrafo(AlgumaParser.ParagrafoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#string}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitString(AlgumaParser.StringContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#selo}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSelo(AlgumaParser.SeloContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#image}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitImage(AlgumaParser.ImageContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#url}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUrl(AlgumaParser.UrlContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#tema}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTema(AlgumaParser.TemaContext ctx);
 }

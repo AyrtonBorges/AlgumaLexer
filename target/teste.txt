@@ -1,8 +1,8 @@
 CRIARPAGINA()
-    CABECA()
-    FIM
-    CORPO()
-    FIM
-    PERNAS()
-    FIM
+	CABECA()
+	FIM
+	CORPO()
+	FIM
+	PERNAS()
+	FIM
 FIM
