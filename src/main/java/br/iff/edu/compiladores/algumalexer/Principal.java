@@ -30,6 +30,7 @@ public class Principal
         parser.addErrorListener(pegaErro);
         
         PageContext arvore = parser.page();
+        parser.page().getText();
         Semantico as = new Semantico();
         as.visitPage(arvore);
         if(SemanticoUtils.errosSemanticos.isEmpty() == false) {
@@ -40,9 +41,9 @@ public class Principal
             pw.append("Fim da compilação\n");
             pw.close();
         }else if (parser.getNumberOfSyntaxErrors() > 1 ) {
-            System.out.println("Houve erro sintaxe no código!");
+            System.out.println("Houve erro sintático no código!");
             System.out.println("Quantidade de erros: "+(parser.getNumberOfSyntaxErrors()-1));
-            System.out.println("Leia o arquivo de saida para ver qual foi o erro!");
+            System.out.println("Olhe no arquivo de saída para verificar o erro!");
         }else {
             Gerador lac = new Gerador();
             lac.visitPage(arvore);

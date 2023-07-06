@@ -1,1 +1,4 @@
-Erro sintático na linha 6:9 - mismatched input '<EOF>' expecting {'FIM', 'TEXTO', 'TITULO', 'PARAGRAFO', 'SELO', 'IMAGE'}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
