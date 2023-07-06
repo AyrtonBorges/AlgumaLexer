@@ -27,10 +27,12 @@ public class Gerador extends AlgumaBaseVisitor<Void>
                         "        <meta charset=\"UTF-8\"/>\n" + 
                         "           <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
                         "           <title>CSL - Site</title>\n" + 
-                        "    </head>\n");
+                        "    </head>\n" +
+                        "<body>");
            visitHeader(ctx.header());
            visitCorpo(ctx.corpo());
            visitPernas(ctx.pernas());
+           saida.append("</body>" + "</html>");
            
         return super.visitPage(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
@@ -63,19 +65,21 @@ public class Gerador extends AlgumaBaseVisitor<Void>
 
     @Override
     public Void visitTexto(AlgumaParser.TextoContext ctx) {
-        saida.append("<article> </article>\n");
+        saida.append("<article>");
+        visitValor_texto(ctx.valor_texto(0));
+        saida.append("</article>\n");
         return super.visitTexto(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitTitulo(AlgumaParser.TituloContext ctx) {
-        saida.append("<h1> </h1>\n");
+        saida.append("<h1>" + ctx.string().getText() + "</h1>\n");
         return super.visitTitulo(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitParagrafo(AlgumaParser.ParagrafoContext ctx) {
-        saida.append("<p> </p>\n");
+        saida.append("<p>" + ctx.string().getText() + "</p>\n");
         return super.visitParagrafo(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
@@ -87,16 +91,40 @@ public class Gerador extends AlgumaBaseVisitor<Void>
             case "1":
                 entrada += "right;\">\n";
                 break;
-                
+            case "2":
+                entrada += "left;\">\n";
+                break;
+            default:
+                entrada += ">";
         }
-        saida.append("<img src=\"\" width=\"75\" height=\"75\" style=\"float:;\">\n");
+        saida.append(entrada);
         return super.visitSelo(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitImage(AlgumaParser.ImageContext ctx) {
-        saida.append("<img src=\"\" height=\"\" width=\"\" style=\"display: block; margin: auto;\">\n");
+        String entrada = "<img src=\""+ctx.url().getText();
+        String tam = ctx.TAMANHO().getText();
+        switch(tam){
+            case "p":
+                entrada += "height=\"100\" width=\"100\" style=\"display: block; margin: auto;\">\n";
+                break;
+            
+            case "m":
+                entrada += "height=\"250\" width=\"250\" style=\"display: block; margin: auto;\">\n"; 
+                break;
+            
+            case "g":
+                entrada += "height=\"400\" width=\"400\" style=\"display: block; margin: auto;\">\n";
+                break;
+            
+            default:
+                entrada += ">";
+        }
+        
+        saida.append(entrada);
         return super.visitImage(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }     
+    }
+      
 }
 
