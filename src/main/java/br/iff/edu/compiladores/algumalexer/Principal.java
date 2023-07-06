@@ -23,15 +23,13 @@ public class Principal
         AlgumaParser parser = new AlgumaParser(tokens);
         
         // Remove a mensagem de erro padrão
-//        parser.removeErrorListeners(); 
+        parser.removeErrorListeners(); 
         
         // Registra o erro personalizado da analise sintática
         Tratamento_erros pegaErro = new Tratamento_erros(pw);
         parser.addErrorListener(pegaErro);
         
         PageContext arvore = parser.page();
-        System.out.println(parser.page().getText());
-        System.out.println(parser.page().getText().contains("missing"));
         Semantico as = new Semantico();
         as.visitPage(arvore);
         if(SemanticoUtils.errosSemanticos.isEmpty() == false) {
@@ -41,6 +39,10 @@ public class Principal
             }
             pw.append("Fim da compilação\n");
             pw.close();
+        }else if (parser.getNumberOfSyntaxErrors() > 1 ) {
+            System.out.println("Houve erro sintaxe no código!");
+            System.out.println("Quantidade de erros: "+(parser.getNumberOfSyntaxErrors()-1));
+            System.out.println("Leia o arquivo de saida para ver qual foi o erro!");
         }else {
             Gerador lac = new Gerador();
             lac.visitPage(arvore);

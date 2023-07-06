@@ -21,13 +21,17 @@ public class Gerador extends AlgumaBaseVisitor<Void>
 
     @Override
     public Void visitPage(PageContext ctx) {
-        System.out.println("hey");
            saida.append("<!DOCTYPE html>\n" +
                         "<html>\n" +
                         "    <head>\n" +
                         "        <meta charset=\"UTF-8\"/>");
         return super.visitPage(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
+
+    @Override
+    public Void visitHeader(AlgumaParser.HeaderContext ctx) {
+        return super.visitHeader(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }   
        
        
        
