@@ -12,45 +12,76 @@ import org.antlr.v4.runtime.Token;
 
 public class Principal 
 {
+    // Declaração de todos os Objetos
+    static PrintWriter pw;
+    static CharStream cs;
+    static AlgumaLexer lex;
+    static CommonTokenStream tokens;
+    static AlgumaParser parser;
+    static Tratamento_erros pegaErro;
+    static PageContext arvore;
+    static Semantico as;
+    
     public static void main(String args[]) throws IOException
-    {
-        PrintWriter pw = new PrintWriter(new File(args[1]));
+    {    
+        inicializa(args);
         
+        parser.page(); // Compila para ver se tem erro sintático
+        
+        as = new Semantico();
+        as.visitPage(arvore); // Verifica erro semantico
+        
+        if(!SemanticoUtils.errosSemanticos.isEmpty()) { 
+            mensagemErroSemantico();
+        }else if (parser.getNumberOfSyntaxErrors() > 1 ) { // Verifica a quantiade de erro (OBS: se houver um, é normal)
+            mensagemErroSintatico();
+        }else {
+            geradorHTML(args);
+        }
+    }
+    
+    public static void inicializa(String args[]) throws IOException
+    {
+        pw = new PrintWriter(new File(args[1]));
         /* Erro sintático */
-        CharStream cs = CharStreams.fromFileName(args[0]);
-        AlgumaLexer lex = new AlgumaLexer(cs);
-        CommonTokenStream tokens = new CommonTokenStream(lex);
-        AlgumaParser parser = new AlgumaParser(tokens);
+        cs = CharStreams.fromFileName(args[0]);
+        lex = new AlgumaLexer(cs);
+        tokens = new CommonTokenStream(lex);
+        parser = new AlgumaParser(tokens);
         
         // Remove a mensagem de erro padrão
         parser.removeErrorListeners(); 
         
-        // Registra o erro personalizado da analise sintática
-        Tratamento_erros pegaErro = new Tratamento_erros(pw);
-        parser.addErrorListener(pegaErro);
-        
-        PageContext arvore = parser.page();
-        parser.page().getText();
-        Semantico as = new Semantico();
-        as.visitPage(arvore);
-        if(SemanticoUtils.errosSemanticos.isEmpty() == false) {
-            List<String> errosSemanticos = SemanticoUtils.errosSemanticos;
-            for(var erroSemantico : errosSemanticos) {
-                pw.append(erroSemantico + "\n");
-            }
-            pw.append("Fim da compilação\n");
-            pw.close();
-        }else if (parser.getNumberOfSyntaxErrors() > 1 ) {
-            System.out.println("Houve erro sintático no código!");
-            System.out.println("Quantidade de erros: "+(parser.getNumberOfSyntaxErrors()-1));
-            System.out.println("Olhe no arquivo de saída para verificar o erro!");
-        }else {
-            Gerador lac = new Gerador();
-            lac.visitPage(arvore);
-            try (PrintWriter pwc = new PrintWriter(args[1])) {
-                pwc.println(lac.saida.toString());
-            }
-        }
-        parser.page();
+        arvore = parser.page();
     }
+    
+    public static void mensagemErroSemantico()
+    {
+        List<String> errosSemanticos = SemanticoUtils.errosSemanticos;
+        for(var erroSemantico : errosSemanticos) {
+            pw.append(erroSemantico + "\n");
+        }
+        pw.append("Fim da compilação\n");
+        pw.close();
+    }
+    
+    public static void mensagemErroSintatico() throws IOException
+    {
+        // Registra o erro personalizado da analise sintática
+        pegaErro = new Tratamento_erros(pw);
+        parser.addErrorListener(pegaErro);
+        System.out.println("Houve erro sintático no código!");
+        System.out.println("Quantidade de erros: "+(parser.getNumberOfSyntaxErrors()-1));
+        System.out.println("Olhe no arquivo de saída para verificar o erro!");
+    }
+    
+    public static void geradorHTML(String args[]) throws IOException
+    {
+        Gerador lac = new Gerador();
+        lac.visitPage(arvore);
+        try (PrintWriter pwc = new PrintWriter(args[1])) {
+            pwc.println(lac.saida.toString());
+        }
+    }
+    
 }
