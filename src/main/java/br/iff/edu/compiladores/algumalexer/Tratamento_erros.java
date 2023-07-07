@@ -31,16 +31,18 @@ public class Tratamento_erros implements ANTLRErrorListener {
     
     @Override
     public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
-        Token t = (Token) offendingSymbol;
+//        Token t = (Token) offendingSymbol;
         
-        if(t.getType() == 27)
-        {
-            outputFile.append("Linha "+ t.getLine() +": ");
-            outputFile.append("cadeia literal não fechada\n");
-            outputFile.append("Fim da compilacao\n");
-            outputFile.close();
-            exit(0);
-        }
+        outputFile.append("Erro sintático na linha " + line + ":" + charPositionInLine + " - " + msg);
+        outputFile.close();
+//        if(t.getType() == 27)
+//        {
+//            outputFile.append("Linha "+ t.getLine() +": ");
+//            outputFile.append("cadeia literal não fechada\n");
+//            outputFile.append("Fim da compilacao\n");
+//            outputFile.close();
+//            exit(0);
+//        }
         
         outputFile.println("Fim da compilação");
     }
