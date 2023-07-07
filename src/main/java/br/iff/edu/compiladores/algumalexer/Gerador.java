@@ -32,15 +32,16 @@ public class Gerador extends AlgumaBaseVisitor<Void>
            visitHeader(ctx.header());
            visitCorpo(ctx.corpo());
            visitPernas(ctx.pernas());
-           saida.append("</body>" + "</html>");
+           saida.append("</body></html>");
            
         return super.visitPage(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitHeader(AlgumaParser.HeaderContext ctx) {
-        saida.append("<header> </header>\n");
+        saida.append("<header>");
         visitFuncoes(ctx.funcoes(0));
+        saida.append("</header>\n");
         
         return super.visitHeader(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
@@ -53,13 +54,17 @@ public class Gerador extends AlgumaBaseVisitor<Void>
 
     @Override
     public Void visitCorpo(AlgumaParser.CorpoContext ctx) {
-        saida.append("<main> </main>\n");
+        saida.append("<main>");
+        visitFuncoes(ctx.funcoes(0));
+        saida.append("</main>\n");
         return super.visitCorpo(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitPernas(AlgumaParser.PernasContext ctx) {
-        saida.append("<footer> </footer>\n");
+        saida.append("<footer>");
+        visitFuncoes(ctx.funcoes(0));
+        saida.append( "</footer>\n");
         return super.visitPernas(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
