@@ -26,7 +26,9 @@ public class Principal
     {    
         inicializa(args);
         
-        parser.page(); // Compila para ver se tem erro sintático
+        // Registra o erro personalizado da analise sintática
+        pegaErro = new Tratamento_erros(pw);
+        parser.addErrorListener(pegaErro);
         
         as = new Semantico();
         as.visitPage(arvore); // Verifica erro semantico
@@ -67,9 +69,6 @@ public class Principal
     
     public static void mensagemErroSintatico() throws IOException
     {
-        // Registra o erro personalizado da analise sintática
-        pegaErro = new Tratamento_erros(pw);
-        parser.addErrorListener(pegaErro);
         System.out.println("Houve erro sintático no código!");
         System.out.println("Quantidade de erros: "+(parser.getNumberOfSyntaxErrors()-1));
         System.out.println("Olhe no arquivo de saída para verificar o erro!");
