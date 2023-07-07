@@ -27,50 +27,51 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
                 + "           <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
                 + "           <title>CSL - Site</title>\n"
                 + "    </head>\n"
-                + "<body>");
+                + "    <body>\n");
         visitHeader(ctx.header());
         visitCorpo(ctx.corpo());
         visitPernas(ctx.pernas());
-        saida.append("</body></html>");
+        saida.append("    </body>\n"+
+                "</html>\n");
 
-        return super.visitPage(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitHeader(AlgumaParser.HeaderContext ctx) {
-        saida.append("<header>");
+        saida.append("<header>\n");
         for (int i = 0; i < ctx.funcoes().size(); i++) {
-            visitFuncoes(ctx.funcoes(0));
+            visitFuncoes(ctx.funcoes(i));
         }
         saida.append("</header>\n");
 
-        return super.visitHeader(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitMenu(AlgumaParser.MenuContext ctx) {
         saida.append("<nav> </nav>\n");
-        return super.visitMenu(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitCorpo(AlgumaParser.CorpoContext ctx) {
-        saida.append("<main>");
+        saida.append("<main>\n");
         for (int i = 0; i < ctx.funcoes().size(); i++) {
-            visitFuncoes(ctx.funcoes(0));
+            visitFuncoes(ctx.funcoes(i));
         }
         saida.append("</main>\n");
-        return super.visitCorpo(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitPernas(AlgumaParser.PernasContext ctx) {
         saida.append("<footer>");
         for (int i = 0; i < ctx.funcoes().size(); i++) {
-            visitFuncoes(ctx.funcoes(0));
+            visitFuncoes(ctx.funcoes(i));
         }
         saida.append("</footer>\n");
-        return super.visitPernas(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
@@ -80,19 +81,19 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
             visitValor_texto(ctx.valor_texto(0));
         }
         saida.append("</article>\n");
-        return super.visitTexto(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitTitulo(AlgumaParser.TituloContext ctx) {
         saida.append("<h1>" + ctx.string().getText() + "</h1>\n");
-        return super.visitTitulo(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitParagrafo(AlgumaParser.ParagrafoContext ctx) {
         saida.append("<p>" + ctx.string().getText() + "</p>\n");
-        return super.visitParagrafo(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
@@ -110,7 +111,7 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
                 entrada += ">";
         }
         saida.append(entrada);
-        return super.visitSelo(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
@@ -135,7 +136,7 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
         }
 
         saida.append(entrada);
-        return super.visitImage(ctx); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
 }

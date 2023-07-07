@@ -29,7 +29,7 @@ public class Principal
         // Registra o erro personalizado da analise sintática
         pegaErro = new Tratamento_erros(pw);
         parser.addErrorListener(pegaErro);
-        
+        parser.page();
         as = new Semantico();
         as.visitPage(arvore); // Verifica erro semantico
         
