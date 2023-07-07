@@ -28,9 +28,11 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
                 + "           <title>CSL - Site</title>\n"
                 + "    </head>\n"
                 + "    <body>\n");
+        
         visitHeader(ctx.header());
         visitCorpo(ctx.corpo());
         visitPernas(ctx.pernas());
+        
         saida.append("    </body>\n"+
                 "</html>\n");
 
@@ -78,7 +80,7 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
     public Void visitTexto(AlgumaParser.TextoContext ctx) {
         saida.append("<article>");
         for (int i = 0; i < ctx.valor_texto().size(); i++) {
-            visitValor_texto(ctx.valor_texto(0));
+            visitValor_texto(ctx.valor_texto(i));
         }
         saida.append("</article>\n");
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody

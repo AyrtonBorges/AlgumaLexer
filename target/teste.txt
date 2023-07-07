@@ -3,6 +3,10 @@ CRIARPAGINA()
 		SELO("https://quadrosdecorativos.com/wp-content/uploads/2022/05/8299-Quadro-Leao-Tenha-Fe-4.jpg",2)
 	FIM
 	CORPO()
+		TEXTO()
+			TITULO("Hello World!")
+			PARAGRAFO("OWO!!")
+		FIM
 	FIM
 	PERNAS()
 	FIM
