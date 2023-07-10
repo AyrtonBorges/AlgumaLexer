@@ -1,4 +1,4 @@
-// Generated from br/iff/edu/compiladores/algumalexer/Alguma.g4 by ANTLR 4.13.0
+// Generated from br\iff\edu\compiladores\algumalexer\Alguma.g4 by ANTLR 4.13.0
 package br.iff.edu.compiladores.algumalexer;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -459,25 +459,24 @@ public class AlgumaParser extends Parser {
 		FuncoesContext _localctx = new FuncoesContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_funcoes);
 		try {
+			enterOuterAlt(_localctx, 1);
+			{
 			setState(81);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__11:
-				enterOuterAlt(_localctx, 1);
 				{
 				setState(77);
 				selo();
 				}
 				break;
 			case T__12:
-				enterOuterAlt(_localctx, 2);
 				{
 				setState(78);
 				image();
 				}
 				break;
 			case T__8:
-				enterOuterAlt(_localctx, 3);
 				{
 				setState(79);
 				texto();
@@ -485,7 +484,6 @@ public class AlgumaParser extends Parser {
 				break;
 			case T__9:
 			case T__10:
-				enterOuterAlt(_localctx, 4);
 				{
 				setState(80);
 				valor_texto();
@@ -493,6 +491,7 @@ public class AlgumaParser extends Parser {
 				break;
 			default:
 				throw new NoViableAltException(this);
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -606,18 +605,18 @@ public class AlgumaParser extends Parser {
 		Valor_textoContext _localctx = new Valor_textoContext(_ctx, getState());
 		enterRule(_localctx, 14, RULE_valor_texto);
 		try {
+			enterOuterAlt(_localctx, 1);
+			{
 			setState(96);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__9:
-				enterOuterAlt(_localctx, 1);
 				{
 				setState(94);
 				titulo();
 				}
 				break;
 			case T__10:
-				enterOuterAlt(_localctx, 2);
 				{
 				setState(95);
 				paragrafo();
@@ -625,6 +624,7 @@ public class AlgumaParser extends Parser {
 				break;
 			default:
 				throw new NoViableAltException(this);
+			}
 			}
 		}
 		catch (RecognitionException re) {

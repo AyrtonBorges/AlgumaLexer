@@ -55,13 +55,13 @@ pernas: 'PERNAS''('')'
         (funcoes)*
         'FIM';
 
-funcoes: selo|image|texto|valor_texto;
+funcoes: (selo|image|texto|valor_texto);
 
 texto:  'TEXTO''('')'
-            valor_texto*
+            (valor_texto)*
         'FIM';
 
-valor_texto: titulo|paragrafo;
+valor_texto: (titulo|paragrafo);
 
 titulo: 'TITULO''('string')';
 
