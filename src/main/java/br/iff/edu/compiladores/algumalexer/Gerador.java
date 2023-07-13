@@ -20,33 +20,80 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
 
     @Override
     public Void visitPage(PageContext ctx) {
-        saida.append("<!DOCTYPE html>\n"
-                + "<html lang=\"pt-br\">\n"
-                + "    <head>\n"
-                + "        <meta charset=\"UTF-8\"/>\n"
-                + "           <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
-                + "           <title>CSL - Site</title>\n"
-                + "    </head>\n"
-                + "    <body>\n");
-        
+        saida.append("<!DOCTYPE html>\n" +
+                    "<html>\n" +
+                    "<head>\n" +
+                    "    <style>\n" +
+                    "        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');\n" +
+                    "\n" +
+                    "        body {\n" +
+                    "            background: linear-gradient(to right, #fbc2eb, #a6c1ee);\n" +
+                    "            font-family: 'Roboto Mono', monospace;\n" +
+                    "            color: #392D3D;\n" +
+                    "            margin: 0;\n" +
+                    "            padding: 0;\n" +
+                    "        }\n" +
+                    "\n" +
+                    "        .navbar {\n" +
+                    "            background-color: #392D3D;\n" +
+                    "            overflow: hidden;\n" +
+                    "        }\n" +
+                    "\n" +
+                    "        .navbar a {\n" +
+                    "            float: left;\n" +
+                    "            display: block;\n" +
+                    "            color: #f2f2f2;\n" +
+                    "            text-align: center;\n" +
+                    "            padding: 14px 16px;\n" +
+                    "            text-decoration: none;\n" +
+                    "        }\n" +
+                    "\n" +
+                    "        .navbar a:hover {\n" +
+                    "            background-color: #ddd;\n" +
+                    "            color: black;\n" +
+                    "        }\n" +
+                    "\n" +
+                    "        footer {\n" +
+                    "            position: fixed;\n" +
+                    "            left: 0;\n" +
+                    "            bottom: 0;\n" +
+                    "            width: 100%;\n" +
+                    "            background-color: #392D3D;\n" +
+                    "            color: white;\n" +
+                    "            text-align: center;\n" +
+                    "            padding: 10px 0;\n" +
+                    "        }\n" +
+                    "\n" +
+                    "        .content {\n" +
+                    "            margin: 50px;\n" +
+                    "            text-align: center;\n" +
+                    "            font-size: 1.5em;\n" +
+                    "        }\n" +
+                    "    </style>\n" +
+                    "</head>\n" +
+                    "<body>");
         visitHeader(ctx.header());
         visitCorpo(ctx.corpo());
         visitPernas(ctx.pernas());
+
         
         saida.append("    </body>\n"+
                 "</html>\n");
-
+        System.out.println("Compilação terminada!");
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitHeader(AlgumaParser.HeaderContext ctx) {
-        saida.append("<header>\n");
-        for (int i = 0; i < ctx.funcoes().size(); i++) {
-            visitFuncoes(ctx.funcoes(i));
+        if(ctx != null)
+        {
+            saida.append("<div class=\"navbar\">\n");
+            for (int i = 0; i < ctx.pequenas_ocasioes().size(); i++) {
+                visitPequenas_ocasioes(ctx.pequenas_ocasioes(i));
+            }
+            saida.append("</div>\n");
         }
-        saida.append("</header>\n");
-
+        
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
@@ -58,21 +105,29 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
 
     @Override
     public Void visitCorpo(AlgumaParser.CorpoContext ctx) {
-        saida.append("<main>\n");
-        for (int i = 0; i < ctx.funcoes().size(); i++) {
-            visitFuncoes(ctx.funcoes(i));
+        if(ctx != null)
+        {
+             saida.append("<main>\n");
+            for (int i = 0; i < ctx.funcoes().size(); i++) {
+                visitFuncoes(ctx.funcoes(i));
+            }
+            saida.append("</main>\n");
         }
-        saida.append("</main>\n");
+       
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitPernas(AlgumaParser.PernasContext ctx) {
-        saida.append("<footer>");
-        for (int i = 0; i < ctx.funcoes().size(); i++) {
-            visitFuncoes(ctx.funcoes(i));
+        if(ctx != null)
+        {
+            saida.append("<footer>");
+            for (int i = 0; i < ctx.pequenas_ocasioes().size(); i++) {
+                visitPequenas_ocasioes(ctx.pequenas_ocasioes(i));
+            }
+            saida.append("</footer>\n");
         }
-        saida.append("</footer>\n");
+        
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
@@ -100,7 +155,7 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
 
     @Override
     public Void visitSelo(AlgumaParser.SeloContext ctx) {
-        String entrada = "<img src=" + ctx.url().getText() + " width=\"75\" height=\"75\" style=\"float:";
+        String entrada = "<img src=" + ctx.url().getText() + " width=\"45\" height=\"45\" style=\"float:";
         String tempPos = ctx.POSICAO().getText();
         switch (tempPos) {
             case "1":

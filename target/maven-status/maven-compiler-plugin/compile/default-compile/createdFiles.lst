@@ -7,6 +7,7 @@ br\iff\edu\compiladores\algumalexer\AlgumaListener.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$TextoContext.class
 br\iff\edu\compiladores\algumalexer\Principal.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$SeloContext.class
+br\iff\edu\compiladores\algumalexer\AlgumaParser$BotaoContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaBaseListener.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$CorpoContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$StringContext.class
@@ -16,6 +17,7 @@ br\iff\edu\compiladores\algumalexer\AlgumaParser.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$MenuContext.class
 br\iff\edu\compiladores\algumalexer\Semantico.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$UrlContext.class
+br\iff\edu\compiladores\algumalexer\AlgumaParser$Pequenas_ocasioesContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$HeaderContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$PageContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaVisitor.class
