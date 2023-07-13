@@ -47,6 +47,18 @@ public interface AlgumaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFuncoes(AlgumaParser.FuncoesContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#pequenas_ocasioes}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPequenas_ocasioes(AlgumaParser.Pequenas_ocasioesContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link AlgumaParser#botao}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBotao(AlgumaParser.BotaoContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link AlgumaParser#texto}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

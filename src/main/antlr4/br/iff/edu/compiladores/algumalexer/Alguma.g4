@@ -33,29 +33,33 @@ COMENTARIO_ERR:   '{' ~('\n'|'}'|'\r')* '\n'
 ERRO: .
 ;
 
-page: 'CRIARPAGINA''('')'
-        header
-        corpo
-        pernas
+page: 'CRIARPAGINA''('')' // Feito
+        (header)?
+        (corpo)?
+        (pernas)?
       'FIM'EOF;
 
-header: 'CABECA''('')'
-        (funcoes)*
+header: 'CABECA''('')' // Feito
+        (pequenas_ocasioes)*
         'FIM';
 
-menu: 'MENU''('')'
+menu: 'MENU''('')' // Não feito
 
       'FIM';
 
-corpo: 'CORPO''('')' 
+corpo: 'CORPO''('')' // Feito
         (funcoes)*
        'FIM';
 
 pernas: 'PERNAS''('')' 
-        (funcoes)*
+        (pequenas_ocasioes)*
         'FIM';
 
 funcoes: (selo|image|texto|valor_texto);
+
+pequenas_ocasioes: (selo|botao|paragrafo);
+
+botao: 'BOTAO''('url','string')';
 
 texto:  'TEXTO''('')'
             (valor_texto)*

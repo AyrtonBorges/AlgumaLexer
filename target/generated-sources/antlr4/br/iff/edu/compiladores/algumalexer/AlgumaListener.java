@@ -68,6 +68,26 @@ public interface AlgumaListener extends ParseTreeListener {
 	 */
 	void exitFuncoes(AlgumaParser.FuncoesContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#pequenas_ocasioes}.
+	 * @param ctx the parse tree
+	 */
+	void enterPequenas_ocasioes(AlgumaParser.Pequenas_ocasioesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#pequenas_ocasioes}.
+	 * @param ctx the parse tree
+	 */
+	void exitPequenas_ocasioes(AlgumaParser.Pequenas_ocasioesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#botao}.
+	 * @param ctx the parse tree
+	 */
+	void enterBotao(AlgumaParser.BotaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#botao}.
+	 * @param ctx the parse tree
+	 */
+	void exitBotao(AlgumaParser.BotaoContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#texto}.
 	 * @param ctx the parse tree
 	 */
