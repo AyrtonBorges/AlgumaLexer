@@ -1,20 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8"/>
-           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-           <title>CSL - Site</title>
-    </head>
-    <body>
-<header>
-<img src="https://quadrosdecorativos.com/wp-content/uploads/2022/05/8299-Quadro-Leao-Tenha-Fe-4.jpg" width="75" height="75" style="float:left;">
-</header>
-<main>
-<article><h1>"Hello World!"</h1>
-<p>"OWO!!"</p>
-</article>
-</main>
-<footer></footer>
-    </body>
-</html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 
+        body {
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            font-family: 'Roboto Mono', monospace;
+            color: #392D3D;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #392D3D;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #392D3D;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .content {
+            margin: 50px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="content">
+        <h1>Bem-vindo ao tema Vaporwave!</h1>
+        <p>Este é um exemplo simples de um tema vaporwave com uma barra de navegação e um rodapé. Você pode personalizar este código para se adequar às suas necessidades.</p>
+    </div>
+
+    <footer>
+        <p>© 2023 Vaporwave Site. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
