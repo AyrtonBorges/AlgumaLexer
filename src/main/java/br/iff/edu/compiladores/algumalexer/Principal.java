@@ -71,7 +71,7 @@ public class Principal
     {
         System.out.println("Houve erro sintático no código!");
         System.out.println("Quantidade de erros: "+(parser.getNumberOfSyntaxErrors()-1));
-        System.out.println("Olhe no arquivo de saída para verificar o erro!");
+        System.out.println(parser.page().getText());
     }
     
     public static void geradorHTML(String args[]) throws IOException

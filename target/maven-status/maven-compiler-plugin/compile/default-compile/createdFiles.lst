@@ -5,10 +5,14 @@ br\iff\edu\compiladores\algumalexer\SemanticoUtils.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$ParagrafoContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaListener.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$TextoContext.class
+br\iff\edu\compiladores\algumalexer\AlgumaParser$Formulario_entradaContext.class
 br\iff\edu\compiladores\algumalexer\Principal.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$SeloContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$BotaoContext.class
+br\iff\edu\compiladores\algumalexer\AlgumaParser$EntradaContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaBaseListener.class
+br\iff\edu\compiladores\algumalexer\AlgumaParser$Entrada_textoContext.class
+br\iff\edu\compiladores\algumalexer\AlgumaParser$PularlinhaContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$CorpoContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$StringContext.class
 br\iff\edu\compiladores\algumalexer\Gerador.class
@@ -19,8 +23,11 @@ br\iff\edu\compiladores\algumalexer\Semantico.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$UrlContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$Pequenas_ocasioesContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$HeaderContext.class
+br\iff\edu\compiladores\algumalexer\AlgumaParser$FormularioContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$PageContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaVisitor.class
+br\iff\edu\compiladores\algumalexer\AlgumaParser$Botao_corpoContext.class
+br\iff\edu\compiladores\algumalexer\AlgumaParser$LinkContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaParser$FuncoesContext.class
 br\iff\edu\compiladores\algumalexer\AlgumaLexer.class
 br\iff\edu\compiladores\algumalexer\Tratamento_erros.class
