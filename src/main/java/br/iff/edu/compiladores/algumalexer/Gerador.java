@@ -85,8 +85,9 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
                     "    }\n" +
                     "  \n" +
                     "    .form-container input[type=\"text\"],\n" +
-                    "    .form-container input[type=\"number\"] {\n" +
-                    "      width: 100%;\n" +
+                    "    .form-container input[type=\"number\"], \n" +
+                    "    .form-container input[type=\"password\"]{\n" +
+                    "      width: 96%;\n" +
                     "      padding: 5px;\n" +
                     "      border-radius: 3px;\n" +
                     "      border: 1px solid #ccc;\n" +
@@ -123,7 +124,7 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
                 visitMenu(ctx.menu());
                 for(int i = 0; i < ctx.funcoes().size(); i++)
                     visitFuncoes(ctx.funcoes(i));
-            saida.append("<div>");
+            saida.append("</div>");
         }
         
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody

@@ -7,12 +7,14 @@ CRIARPAGINA()
 	FIM
 	CORPO()
 		FORMULARIO("SEILA","post","SEILA")
-			ROTULO("Teste:")
-			ENTRADA("text","TESTE")
+			ROTULO("Nome:")
+			ENTRADA("text","nome")
+            ROTULO("Senha:")
+            ENTRADA("password","senha")
 			BOTAO("Enviar")
 		FIM
 	FIM
 	PERNAS()
-		PARAGRAFO("TESTE")
+		PARAGRAFO("© 2023 CSL (Create Site Language). Todos os direitos reservados à Ayrton e Edivan!")
 	FIM
 FIM
