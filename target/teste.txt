@@ -1,11 +1,15 @@
 CRIARPAGINA()
 	CABECA()
 		MENU()
+            BOTAO("TESTE","INÍCIO")
 			BOTAO("TESTE","SOBRE")
 			BOTAO("TESTE","CONTATO")
 		FIM
 	FIM
 	CORPO()
+        TEXTO()
+            TITULO("Página de Login")
+        FIM
 		FORMULARIO("SEILA","post","SEILA")
 			ROTULO("Nome:")
 			ENTRADA("text","nome")
