@@ -1,13 +1,18 @@
 CRIARPAGINA()
 	CABECA()
-		SELO("https://quadrosdecorativos.com/wp-content/uploads/2022/05/8299-Quadro-Leao-Tenha-Fe-4.jpg",2)
+		MENU()
+			BOTAO("TESTE","SOBRE")
+			BOTAO("TESTE","CONTATO")
+		FIM
 	FIM
 	CORPO()
-		TEXTO()
-			TITULO("Hello World!")
-			PARAGRAFO("OWO!!")
+		FORMULARIO("SEILA","post","SEILA")
+			ROTULO("Teste:")
+			ENTRADA("text","TESTE")
+			BOTAO("Enviar")
 		FIM
 	FIM
 	PERNAS()
+		PARAGRAFO("TESTE")
 	FIM
 FIM

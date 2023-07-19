@@ -28,16 +28,6 @@ public interface AlgumaListener extends ParseTreeListener {
 	 */
 	void exitHeader(AlgumaParser.HeaderContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link AlgumaParser#menu}.
-	 * @param ctx the parse tree
-	 */
-	void enterMenu(AlgumaParser.MenuContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link AlgumaParser#menu}.
-	 * @param ctx the parse tree
-	 */
-	void exitMenu(AlgumaParser.MenuContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#corpo}.
 	 * @param ctx the parse tree
 	 */
@@ -78,6 +68,16 @@ public interface AlgumaListener extends ParseTreeListener {
 	 */
 	void exitPequenas_ocasioes(AlgumaParser.Pequenas_ocasioesContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#menu}.
+	 * @param ctx the parse tree
+	 */
+	void enterMenu(AlgumaParser.MenuContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#menu}.
+	 * @param ctx the parse tree
+	 */
+	void exitMenu(AlgumaParser.MenuContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#botao}.
 	 * @param ctx the parse tree
 	 */
@@ -87,6 +87,76 @@ public interface AlgumaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBotao(AlgumaParser.BotaoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#formulario}.
+	 * @param ctx the parse tree
+	 */
+	void enterFormulario(AlgumaParser.FormularioContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#formulario}.
+	 * @param ctx the parse tree
+	 */
+	void exitFormulario(AlgumaParser.FormularioContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#formulario_entrada}.
+	 * @param ctx the parse tree
+	 */
+	void enterFormulario_entrada(AlgumaParser.Formulario_entradaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#formulario_entrada}.
+	 * @param ctx the parse tree
+	 */
+	void exitFormulario_entrada(AlgumaParser.Formulario_entradaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#entrada_texto}.
+	 * @param ctx the parse tree
+	 */
+	void enterEntrada_texto(AlgumaParser.Entrada_textoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#entrada_texto}.
+	 * @param ctx the parse tree
+	 */
+	void exitEntrada_texto(AlgumaParser.Entrada_textoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#pularlinha}.
+	 * @param ctx the parse tree
+	 */
+	void enterPularlinha(AlgumaParser.PularlinhaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#pularlinha}.
+	 * @param ctx the parse tree
+	 */
+	void exitPularlinha(AlgumaParser.PularlinhaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#botao_corpo}.
+	 * @param ctx the parse tree
+	 */
+	void enterBotao_corpo(AlgumaParser.Botao_corpoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#botao_corpo}.
+	 * @param ctx the parse tree
+	 */
+	void exitBotao_corpo(AlgumaParser.Botao_corpoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#entrada}.
+	 * @param ctx the parse tree
+	 */
+	void enterEntrada(AlgumaParser.EntradaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#entrada}.
+	 * @param ctx the parse tree
+	 */
+	void exitEntrada(AlgumaParser.EntradaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AlgumaParser#link}.
+	 * @param ctx the parse tree
+	 */
+	void enterLink(AlgumaParser.LinkContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AlgumaParser#link}.
+	 * @param ctx the parse tree
+	 */
+	void exitLink(AlgumaParser.LinkContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link AlgumaParser#texto}.
 	 * @param ctx the parse tree

@@ -69,6 +69,38 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
                     "            text-align: center;\n" +
                     "            font-size: 1.5em;\n" +
                     "        }\n" +
+                    "   .form-container {\n" +
+                    "      width: 300px;\n" +
+                    "      margin: 0 auto;\n" +
+                    "      padding: 20px;\n" +
+                    "      border: 1px solid #ccc;\n" +
+                    "      border-radius: 5px;\n" +
+                    "      background-color: #f5f5f5;\n" +
+                    "    }\n" +
+                    "  \n" +
+                    "    .form-container label,\n" +
+                    "    .form-container input {\n" +
+                    "      display: block;\n" +
+                    "      margin-bottom: 10px;\n" +
+                    "    }\n" +
+                    "  \n" +
+                    "    .form-container input[type=\"text\"],\n" +
+                    "    .form-container input[type=\"number\"] {\n" +
+                    "      width: 100%;\n" +
+                    "      padding: 5px;\n" +
+                    "      border-radius: 3px;\n" +
+                    "      border: 1px solid #ccc;\n" +
+                    "    }\n" +
+                    "  \n" +
+                    "    .form-container input[type=\"submit\"] {\n" +
+                    "      width: 100%;\n" +
+                    "      padding: 10px;\n" +
+                    "      border-radius: 3px;\n" +
+                    "      border: none;\n" +
+                    "      background-color: #4caf50;\n" +
+                    "      color: white;\n" +
+                    "      cursor: pointer;\n" +
+                    "    }" +
                     "    </style>\n" +
                     "</head>\n" +
                     "<body>");
@@ -87,11 +119,11 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
     public Void visitHeader(AlgumaParser.HeaderContext ctx) {
         if(ctx != null)
         {
-            saida.append("<div class=\"navbar\">\n");
-            for (int i = 0; i < ctx.pequenas_ocasioes().size(); i++) {
-                visitPequenas_ocasioes(ctx.pequenas_ocasioes(i));
-            }
-            saida.append("</div>\n");
+            saida.append("<div class=\"cabeca\">");
+                visitMenu(ctx.menu());
+                for(int i = 0; i < ctx.funcoes().size(); i++)
+                    visitFuncoes(ctx.funcoes(i));
+            saida.append("<div>");
         }
         
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
@@ -99,15 +131,81 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
 
     @Override
     public Void visitMenu(AlgumaParser.MenuContext ctx) {
-        saida.append("<nav> </nav>\n");
+        if(ctx != null)
+        {
+            saida.append("<nav>");
+            saida.append("<div class=\"navbar\">\n");
+            for (int i = 0; i < ctx.pequenas_ocasioes().size(); i++) {
+                visitPequenas_ocasioes(ctx.pequenas_ocasioes(i));
+            }
+            saida.append("</div>\n");
+        saida.append("</nav>\n");
+        }
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
+    public Void visitPularlinha(AlgumaParser.PularlinhaContext ctx) {
+        saida.append("<br>");
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
+    public Void visitEntrada_texto(AlgumaParser.Entrada_textoContext ctx) {
+        String entrada = ctx.string().getText();
+        saida.append("<label>"+entrada.substring(1, entrada.length() - 1)+"</label>");
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
+    public Void visitLink(AlgumaParser.LinkContext ctx) {
+        String entrada = ctx.string().getText();
+        saida.append("<a href="+ctx.url().getText()+" class=\"button\">"+entrada.substring(1, entrada.length() - 1)+"</a>");
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
+    public Void visitEntrada(AlgumaParser.EntradaContext ctx) {
+        saida.append("<input type="+ctx.string(0).getText()+" id="+ctx.string(1).getText()+" name="+ctx.string(1).getText()+">");
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
+    public Void visitBotao_corpo(AlgumaParser.Botao_corpoContext ctx) {
+        saida.append("<input type=\"submit\" value="+ctx.string().getText()+">");
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
+    public Void visitFormulario(AlgumaParser.FormularioContext ctx) {
+        saida.append("<div class=\"form-container\">");
+        saida.append("<form action="+ctx.string(0).getText()+" target="+ctx.string(1).getText()+" name="+ctx.string(2).getText()+">");
+        for(int i = 0; i < ctx.formulario_entrada().size(); i++)
+        {
+            visitFormulario_entrada(ctx.formulario_entrada(i));
+        }
+        for(int i = 0; i < ctx.botao_corpo().size(); i++)
+        {
+            visitBotao_corpo(ctx.botao_corpo(i));
+        }
+        saida.append("</form>"
+                + "</div>");
+        
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
+    public Void visitBotao(AlgumaParser.BotaoContext ctx) {
+        String entrada = ctx.string().getText();
+        saida.append("<a href="+ctx.url().getText()+" class=\"button\">"+entrada.substring(1, entrada.length() - 1)+"</a>");
+        return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+    
+    @Override
     public Void visitCorpo(AlgumaParser.CorpoContext ctx) {
         if(ctx != null)
         {
-             saida.append("<main>\n");
+            saida.append("<main>\n");
             for (int i = 0; i < ctx.funcoes().size(); i++) {
                 visitFuncoes(ctx.funcoes(i));
             }
@@ -143,26 +241,28 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
 
     @Override
     public Void visitTitulo(AlgumaParser.TituloContext ctx) {
-        saida.append("<h1>" + ctx.string().getText() + "</h1>\n");
+        String entrada = ctx.string().getText();
+        saida.append("<h1>" + entrada.substring(1, entrada.length() - 1) + "</h1>\n");
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitParagrafo(AlgumaParser.ParagrafoContext ctx) {
-        saida.append("<p>" + ctx.string().getText() + "</p>\n");
+        String entrada = ctx.string().getText();
+        saida.append("<p>" + entrada.substring(1, entrada.length() - 1) + "</p>\n");
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public Void visitSelo(AlgumaParser.SeloContext ctx) {
-        String entrada = "<img src=" + ctx.url().getText() + " width=\"45\" height=\"45\" style=\"float:";
+        String entrada = "<img src=" + ctx.url().getText() + " width=\"45\" height=\"45\" ";
         String tempPos = ctx.POSICAO().getText();
         switch (tempPos) {
             case "1":
-                entrada += "right;\">\n";
+                entrada += "style=\"float:right;\">\n";
                 break;
             case "2":
-                entrada += "left;\">\n";
+                entrada += "style=\"float:left;\">\n";
                 break;
             default:
                 entrada += ">";
@@ -173,7 +273,7 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
 
     @Override
     public Void visitImage(AlgumaParser.ImageContext ctx) {
-        String entrada = "<img src=\"" + ctx.url().getText();
+        String entrada = "<img src=" + ctx.url().getText();
         String tam = ctx.TAMANHO().getText();
         switch (tam) {
             case "p":

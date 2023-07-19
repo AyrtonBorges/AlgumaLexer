@@ -40,32 +40,50 @@ page: 'CRIARPAGINA''('')' // Feito
       'FIM'EOF;
 
 header: 'CABECA''('')' // Feito
-        (pequenas_ocasioes)*
+        menu?
+        (funcoes)*
         'FIM';
-
-menu: 'MENU''('')' // Não feito
-
-      'FIM';
 
 corpo: 'CORPO''('')' // Feito
         (funcoes)*
        'FIM';
 
-pernas: 'PERNAS''('')' 
+pernas: 'PERNAS''('')' // Feito
         (pequenas_ocasioes)*
         'FIM';
 
-funcoes: (selo|image|texto|valor_texto);
+funcoes: (selo|image|texto|valor_texto|link|formulario|link|pularlinha);
 
-pequenas_ocasioes: (selo|botao|paragrafo);
+pequenas_ocasioes: (selo|botao|paragrafo|titulo);
+
+menu: 'MENU''('')' // Feito
+        (pequenas_ocasioes)*
+      'FIM';
 
 botao: 'BOTAO''('url','string')';
+
+formulario: 'FORMULARIO''('string','string','string')' // Feito
+                (formulario_entrada)*
+                (botao_corpo)*
+            'FIM'; 
+
+formulario_entrada: (entrada_texto|entrada|pularlinha);
+
+entrada_texto: 'ROTULO''('string')'; // Feito
+
+pularlinha: 'PULARLINHA()'; // Feito
+
+botao_corpo: 'BOTAO''('string')'; // Feito
+    
+entrada:'ENTRADA''('string','string')'; // Feito
+
+link: 'LINK''('url','string')'; // Feito
 
 texto:  'TEXTO''('')'
             (valor_texto)*
         'FIM';
 
-valor_texto: (titulo|paragrafo);
+valor_texto: (titulo|paragrafo|pularlinha);
 
 titulo: 'TITULO''('string')';
 

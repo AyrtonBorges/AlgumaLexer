@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /home/ayrton/NetBeansProjects/AlgumaLexer/target/generated-sources/antlr4/br/iff/edu/compiladores/algumalexer/AlgumaVisitor.java
 /home/ayrton/NetBeansProjects/AlgumaLexer/target/generated-sources/antlr4/br/iff/edu/compiladores/algumalexer/AlgumaParser.java
 /home/ayrton/NetBeansProjects/AlgumaLexer/target/generated-sources/antlr4/br/iff/edu/compiladores/algumalexer/AlgumaLexer.java
@@ -10,16 +9,3 @@
 /home/ayrton/NetBeansProjects/AlgumaLexer/src/main/java/br/iff/edu/compiladores/algumalexer/Principal.java
 /home/ayrton/NetBeansProjects/AlgumaLexer/src/main/java/br/iff/edu/compiladores/algumalexer/Gerador.java
 /home/ayrton/NetBeansProjects/AlgumaLexer/src/main/java/br/iff/edu/compiladores/algumalexer/Tratamento_erros.java
-=======
-C:\Users\ayrto\OneDrive\Documents\NetBeansProjects\AlgumaLexer\target\generated-sources\antlr4\br\iff\edu\compiladores\algumalexer\AlgumaBaseVisitor.java
-C:\Users\ayrto\OneDrive\Documents\NetBeansProjects\AlgumaLexer\target\generated-sources\antlr4\br\iff\edu\compiladores\algumalexer\AlgumaBaseListener.java
-C:\Users\ayrto\OneDrive\Documents\NetBeansProjects\AlgumaLexer\src\main\java\br\iff\edu\compiladores\algumalexer\Tratamento_erros.java
-C:\Users\ayrto\OneDrive\Documents\NetBeansProjects\AlgumaLexer\target\generated-sources\antlr4\br\iff\edu\compiladores\algumalexer\AlgumaParser.java
-C:\Users\ayrto\OneDrive\Documents\NetBeansProjects\AlgumaLexer\target\generated-sources\antlr4\br\iff\edu\compiladores\algumalexer\AlgumaVisitor.java
-C:\Users\ayrto\OneDrive\Documents\NetBeansProjects\AlgumaLexer\target\generated-sources\antlr4\br\iff\edu\compiladores\algumalexer\AlgumaLexer.java
-C:\Users\ayrto\OneDrive\Documents\NetBeansProjects\AlgumaLexer\src\main\java\br\iff\edu\compiladores\algumalexer\Semantico.java
-C:\Users\ayrto\OneDrive\Documents\NetBeansProjects\AlgumaLexer\src\main\java\br\iff\edu\compiladores\algumalexer\Gerador.java
-C:\Users\ayrto\OneDrive\Documents\NetBeansProjects\AlgumaLexer\src\main\java\br\iff\edu\compiladores\algumalexer\SemanticoUtils.java
-C:\Users\ayrto\OneDrive\Documents\NetBeansProjects\AlgumaLexer\target\generated-sources\antlr4\br\iff\edu\compiladores\algumalexer\AlgumaListener.java
-C:\Users\ayrto\OneDrive\Documents\NetBeansProjects\AlgumaLexer\src\main\java\br\iff\edu\compiladores\algumalexer\Principal.java
->>>>>>> refs/remotes/origin/main

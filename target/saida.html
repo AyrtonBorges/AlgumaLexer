@@ -47,17 +47,46 @@
             text-align: center;
             font-size: 1.5em;
         }
-    </style>
+   .form-container {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f5f5f5;
+    }
+  
+    .form-container label,
+    .form-container input {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .form-container input[type="text"],
+    .form-container input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+  
+    .form-container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: none;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }    </style>
 </head>
-<body><div class="navbar">
-<img src="https://quadrosdecorativos.com/wp-content/uploads/2022/05/8299-Quadro-Leao-Tenha-Fe-4.jpg" width="45" height="45" style="float:left;">
-</div>
-<main>
-<article><h1>"Hello World!"</h1>
-<p>"OWO!!"</p>
-</article>
-</main>
-<footer></footer>
+<body><div class="cabeca"><nav><div class="navbar">
+<a href="TESTE" class="button">SOBRE</a><a href="TESTE" class="button">CONTATO</a></div>
+</nav>
+<div><main>
+<div class="form-container"><form action="SEILA" target="post" name="SEILA"><label>Teste:</label><input type="text" id="TESTE" name="TESTE"><input type="submit" value="Enviar"></form></div></main>
+<footer><p>TESTE</p>
+</footer>
     </body>
 </html>
 
