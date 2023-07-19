@@ -69,39 +69,54 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
                     "            text-align: center;\n" +
                     "            font-size: 1.5em;\n" +
                     "        }\n" +
-                    "   .form-container {\n" +
-                    "      width: 300px;\n" +
-                    "      margin: 0 auto;\n" +
-                    "      padding: 20px;\n" +
-                    "      border: 1px solid #ccc;\n" +
-                    "      border-radius: 5px;\n" +
-                    "      background-color: #f5f5f5;\n" +
-                    "    }\n" +
-                    "  \n" +
-                    "    .form-container label,\n" +
-                    "    .form-container input {\n" +
-                    "      display: block;\n" +
-                    "      margin-bottom: 10px;\n" +
-                    "    }\n" +
-                    "  \n" +
-                    "    .form-container input[type=\"text\"],\n" +
-                    "    .form-container input[type=\"number\"], \n" +
-                    "    .form-container input[type=\"password\"]{\n" +
-                    "      width: 96%;\n" +
-                    "      padding: 5px;\n" +
-                    "      border-radius: 3px;\n" +
-                    "      border: 1px solid #ccc;\n" +
-                    "    }\n" +
-                    "  \n" +
-                    "    .form-container input[type=\"submit\"] {\n" +
-                    "      width: 100%;\n" +
+                    "        .form-container {\n" +
+                    "            width: 300px;\n" +
+                    "            margin: 0 auto;\n" +
+                    "            padding: 20px;\n" +
+                    "            border: 1px solid #ccc;\n" +
+                    "            border-radius: 5px;\n" +
+                    "            background-color: #392D3D;\n" +
+                    "          }\n" +
+                    "        \n" +
+                    "          .form-container label,\n" +
+                    "          .form-container input {\n" +
+                    "            display: block;\n" +
+                    "            margin-bottom: 10px;\n" +
+                    "            color: #fbc2eb;\n" +
+                    "          }\n" +
+                    "        \n" +
+                    "          .form-container input[type=\"text\"],\n" +
+                    "          .form-container input[type=\"number\"], \n" +
+                    "          .form-container input[type=\"password\"]{\n" +
+                    "            width: 96%;\n" +
+                    "            padding: 5px;\n" +
+                    "            border-radius: 3px;\n" +
+                    "            border: 1px solid #ccc;\n" +
+                    "            background-color: #fbc2eb;\n" +
+                    "            color: white;\n" +
+                    "          }\n" +
+                    "        \n" +
+                    "          .form-container input[type=\"submit\"] {\n" +
+                    "            width: 100%;\n" +
+                    "            padding: 10px;\n" +
+                    "            border-radius: 3px;\n" +
+                    "            border: none;\n" +
+                    "            background-color: #a35a8e;\n" +
+                    "            color: white;\n" +
+                    "            cursor: pointer;\n" +
+                    "          }\n"+
+                    "    .texto {\n" +
+                    "      max-width: 600px;\n" +
+                    "      margin: auto;\n" +
                     "      padding: 10px;\n" +
-                    "      border-radius: 3px;\n" +
-                    "      border: none;\n" +
-                    "      background-color: #4caf50;\n" +
-                    "      color: white;\n" +
-                    "      cursor: pointer;\n" +
-                    "    }" +
+                    "      text-align: justify;\n" +
+                    "      display: flex;\n" +
+                    "      flex-direction: column;\n" +
+                    "      justify-content: center;\n" +
+                    "      align-items: center;\n" +
+                    "      margin-top: 5px;\n" +
+                    "      margin-bottom: 5px;\n" +
+                    "    }\n" +
                     "    </style>\n" +
                     "</head>\n" +
                     "<body>");
@@ -232,11 +247,11 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
 
     @Override
     public Void visitTexto(AlgumaParser.TextoContext ctx) {
-        saida.append("<article>");
+        saida.append("<div class=\"texto\">\n");
         for (int i = 0; i < ctx.valor_texto().size(); i++) {
             visitValor_texto(ctx.valor_texto(i));
         }
-        saida.append("</article>\n");
+        saida.append("</div>\n");
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
