@@ -7,13 +7,15 @@ CRIARPAGINA()
 		FIM
 	FIM
 	CORPO()
-		PULARLINHA() PULARLINHA() PULARLINHA() PULARLINHA() PULARLINHA() PULARLINHA() 
         TEXTO()
-			TITULO("Bem-vindo ao")
-		FIM
-			IMAGEM("csl.png","128","60")
-		TEXTO()
-			PARAGRAFO("< O compilador para todos os brasileiros! >")
+            TITULO("Página de Login")
+        FIM
+		FORMULARIO("SEILA","post","SEILA")
+			ROTULO("Nome:")
+			ENTRADA("text","nome")
+            ROTULO("Senha:")
+            ENTRADA("password","senha")
+			BOTAO("Enviar") 
 		FIM
 	FIM
 	PERNAS()

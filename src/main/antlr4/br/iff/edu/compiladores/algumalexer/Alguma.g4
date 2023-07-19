@@ -93,7 +93,7 @@ string: CADEIA;
 
 selo: 'SELO''('url','POSICAO')';
 
-image:  'IMAGE''('url','TAMANHO')';
+image:  'IMAGEM''('url','string','string')';
 
 url:CADEIA;
 

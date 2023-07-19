@@ -61,7 +61,7 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
                     "            background-color: #392D3D;\n" +
                     "            color: white;\n" +
                     "            text-align: center;\n" +
-                    "            padding: 10px 0;\n" +
+                    "            padding: 2px 0;\n"+
                     "        }\n" +
                     "\n" +
                     "        .content {\n" +
@@ -93,7 +93,7 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
                     "            border-radius: 3px;\n" +
                     "            border: 1px solid #ccc;\n" +
                     "            background-color: #fbc2eb;\n" +
-                    "            color: white;\n" +
+                    "            color: #392D3D;\n" +
                     "          }\n" +
                     "        \n" +
                     "          .form-container input[type=\"submit\"] {\n" +
@@ -290,24 +290,9 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
     @Override
     public Void visitImage(AlgumaParser.ImageContext ctx) {
         String entrada = "<img src=" + ctx.url().getText();
-        String tam = ctx.TAMANHO().getText();
-        switch (tam) {
-            case "p":
-                entrada += "height=\"100\" width=\"100\" style=\"display: block; margin: auto;\">\n";
-                break;
-
-            case "m":
-                entrada += "height=\"250\" width=\"250\" style=\"display: block; margin: auto;\">\n";
-                break;
-
-            case "g":
-                entrada += "height=\"400\" width=\"400\" style=\"display: block; margin: auto;\">\n";
-                break;
-
-            default:
-                entrada += ">";
-        }
-
+        String tam1 = ctx.string(1).getText();
+        String tam2 = ctx.string(0).getText();
+        entrada += "height=\""+tam1.substring(1, tam1.length() - 1)+"\" width=\""+tam2.substring(1, tam2.length() - 1)+"\" style=\"display: block; margin: auto;\">\n";
         saida.append(entrada);
         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }

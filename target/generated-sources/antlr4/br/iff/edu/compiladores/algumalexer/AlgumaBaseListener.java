@@ -1,4 +1,4 @@
-// Generated from br\iff\edu\compiladores\algumalexer\Alguma.g4 by ANTLR 4.13.0
+// Generated from br/iff/edu/compiladores/algumalexer/Alguma.g4 by ANTLR 4.13.0
 package br.iff.edu.compiladores.algumalexer;
 
 import org.antlr.v4.runtime.ParserRuleContext;
