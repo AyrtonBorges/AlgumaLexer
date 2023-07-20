@@ -1478,7 +1478,9 @@ public class AlgumaParser extends Parser {
 			return getRuleContext(UrlContext.class,0);
 		}
 		public TerminalNode VIRGULA() { return getToken(AlgumaParser.VIRGULA, 0); }
-		public TerminalNode POSICAO() { return getToken(AlgumaParser.POSICAO, 0); }
+		public StringContext string() {
+			return getRuleContext(StringContext.class,0);
+		}
 		public SeloContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1513,7 +1515,7 @@ public class AlgumaParser extends Parser {
 			setState(217);
 			match(VIRGULA);
 			setState(218);
-			match(POSICAO);
+			string();
 			setState(219);
 			match(T__2);
 			}
@@ -1814,15 +1816,15 @@ public class AlgumaParser extends Parser {
 		"\u0000\u0000\u00d3%\u0001\u0000\u0000\u0000\u00d4\u00d5\u0005\u001a\u0000"+
 		"\u0000\u00d5\'\u0001\u0000\u0000\u0000\u00d6\u00d7\u0005\u0012\u0000\u0000"+
 		"\u00d7\u00d8\u0005\u0002\u0000\u0000\u00d8\u00d9\u0003,\u0016\u0000\u00d9"+
-		"\u00da\u0005\u0019\u0000\u0000\u00da\u00db\u0005\u0016\u0000\u0000\u00db"+
-		"\u00dc\u0005\u0003\u0000\u0000\u00dc)\u0001\u0000\u0000\u0000\u00dd\u00de"+
-		"\u0005\u0013\u0000\u0000\u00de\u00df\u0005\u0002\u0000\u0000\u00df\u00e0"+
-		"\u0003,\u0016\u0000\u00e0\u00e1\u0005\u0019\u0000\u0000\u00e1\u00e2\u0003"+
-		"&\u0013\u0000\u00e2\u00e3\u0005\u0019\u0000\u0000\u00e3\u00e4\u0003&\u0013"+
-		"\u0000\u00e4\u00e5\u0005\u0003\u0000\u0000\u00e5+\u0001\u0000\u0000\u0000"+
-		"\u00e6\u00e7\u0005\u001a\u0000\u0000\u00e7-\u0001\u0000\u0000\u0000\u00e8"+
-		"\u00e9\u0005\u001a\u0000\u0000\u00e9/\u0001\u0000\u0000\u0000\u000f47"+
-		":CHS^kqy\u0090\u0096\u009e\u00c0\u00c8";
+		"\u00da\u0005\u0019\u0000\u0000\u00da\u00db\u0003&\u0013\u0000\u00db\u00dc"+
+		"\u0005\u0003\u0000\u0000\u00dc)\u0001\u0000\u0000\u0000\u00dd\u00de\u0005"+
+		"\u0013\u0000\u0000\u00de\u00df\u0005\u0002\u0000\u0000\u00df\u00e0\u0003"+
+		",\u0016\u0000\u00e0\u00e1\u0005\u0019\u0000\u0000\u00e1\u00e2\u0003&\u0013"+
+		"\u0000\u00e2\u00e3\u0005\u0019\u0000\u0000\u00e3\u00e4\u0003&\u0013\u0000"+
+		"\u00e4\u00e5\u0005\u0003\u0000\u0000\u00e5+\u0001\u0000\u0000\u0000\u00e6"+
+		"\u00e7\u0005\u001a\u0000\u0000\u00e7-\u0001\u0000\u0000\u0000\u00e8\u00e9"+
+		"\u0005\u001a\u0000\u0000\u00e9/\u0001\u0000\u0000\u0000\u000f47:CHS^k"+
+		"qy\u0090\u0096\u009e\u00c0\u00c8";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -272,8 +272,8 @@ public class Gerador extends AlgumaBaseVisitor<Void> {
     @Override
     public Void visitSelo(AlgumaParser.SeloContext ctx) {
         String entrada = "<img src=" + ctx.url().getText() + " width=\"45\" height=\"45\" ";
-        String tempPos = ctx.POSICAO().getText();
-        switch (tempPos) {
+        String tempPos = ctx.string().getText();
+        switch (tempPos.substring(1, tempPos.length() - 1)) {
             case "1":
                 entrada += "style=\"float:right;\">\n";
                 break;

@@ -91,7 +91,7 @@ paragrafo: 'PARAGRAFO''('string')';
     
 string: CADEIA;
 
-selo: 'SELO''('url','POSICAO')';
+selo: 'SELO''('url','string')';
 
 image:  'IMAGEM''('url','string','string')';
 
