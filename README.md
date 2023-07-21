@@ -1,5 +1,4 @@
-# AlgumaLexer
-# Create Site Linguage
+# CSL (Create Site Language) - Compilador de Português para HTML
 
 ![[Logo da Linguagem](link_para_logo.png) (se aplicável)](https://github.com/AyrtonBorges/AlgumaLexer/blob/main/target/csl.png?raw=true)
 
