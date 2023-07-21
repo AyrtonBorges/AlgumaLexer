@@ -17,8 +17,7 @@ Descreva aqui como instalar a linguagem de programação em diferentes plataform
 ## Como utilizar o compilador
 O código fornecido é um exemplo de utilização do compilador CSL para criar uma página web. A linguagem utilizada no código é uma representação simplificada do CSL, demonstrando a facilidade de criação de elementos HTML utilizando o idioma português.
 
-```
-Copy code
+```CSL
 CRIARPAGINA()
     CABECA()
         MENU()
