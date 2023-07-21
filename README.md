@@ -14,7 +14,7 @@ O CSL oferece uma camada de abstração que simplifica a criação de elementos 
 
 Descreva aqui como instalar a linguagem de programação em diferentes plataformas, por exemplo:
 
-Como utilizar o compilador
+## Como utilizar o compilador
 O código fornecido é um exemplo de utilização do compilador CSL para criar uma página web. A linguagem utilizada no código é uma representação simplificada do CSL, demonstrando a facilidade de criação de elementos HTML utilizando o idioma português.
 
 java
