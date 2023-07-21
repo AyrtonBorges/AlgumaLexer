@@ -1,2 +1,0 @@
-Linha 8: cadeia literal não fechada
-Fim da compilacao
