@@ -68,14 +68,14 @@ Esse é apenas um exemplo básico do que o CSL é capaz de fazer. Para aprender 
 CRIARPAGINA()
 	CABECA()
 		MENU()
-            BOTAO("inicio.html","INICIO")
-            BOTAO("login.html","LOGIN")
+            		BOTAO("inicio.html","INICIO")
+			BOTAO("login.html","LOGIN")
 			BOTAO("sobre.html","SOBRE")
 		FIM
 	FIM
 	CORPO()
 		PULARLINHA() PULARLINHA() PULARLINHA() PULARLINHA() PULARLINHA() PULARLINHA() 
-        TEXTO()
+	        TEXTO()
 			TITULO("Bem-vindo ao")
 		FIM
 			IMAGEM("csl.png","128","60")
@@ -93,20 +93,20 @@ FIM
 CRIARPAGINA()
 	CABECA()
 		MENU()
-            BOTAO("inicio.html","INICIO")
-            BOTAO("login.html","LOGIN")
+			BOTAO("inicio.html","INICIO")
+			BOTAO("login.html","LOGIN")
 			BOTAO("sobre.html","SOBRE")
 		FIM
-	FIM
+	FIM	
 	CORPO()
-        TEXTO()
-            TITULO("Página de Login")
-        FIM
+        	TEXTO()
+          	  	TITULO("Página de Login")
+        	FIM
 		FORMULARIO("SEILA","post","SEILA")
 			ROTULO("Nome:")
 			ENTRADA("text","nome")
-            ROTULO("Senha:")
-            ENTRADA("password","senha")
+            		ROTULO("Senha:")
+            		ENTRADA("password","senha")
 			BOTAO("Enviar") 
 		FIM
 	FIM
@@ -120,16 +120,16 @@ FIM
 CRIARPAGINA()
 	CABECA()
 		MENU()
-            BOTAO("inicio.html","INICIO")
-            BOTAO("login.html","LOGIN")
+			BOTAO("inicio.html","INICIO")
+			BOTAO("login.html","LOGIN")
 			BOTAO("sobre.html","SOBRE")
 		FIM
 	FIM
 	CORPO()
-        TEXTO()
-            TITULO("Sobre o CSL")
-            PARAGRAFO("O CSL (Create Site Language) é um compilador que permite a transcrição da linguagem portuguesa para HTML. Esse compilador foi desenvolvido por Ayrton e Edivan. O objetivo principal do CSL é facilitar o processo de criação de sites, permitindo que pessoas que são fluentes em português possam desenvolver páginas web sem a necessidade de aprender linguagens complexas, como HTML e CSS. Com o CSL, é possível escrever o conteúdo de um site em um formato mais próximo da linguagem cotidiana, usando palavras e estruturas familiares. O compilador traduz essas instruções para HTML e CSS, que é a linguagem padrão para a criação de páginas web. Essa abordagem torna o desenvolvimento de sites mais acessível para iniciantes e para pessoas que não possuem um conhecimento aprofundado em programação. O CSL oferece uma camada de abstração que simplifica a criação de elementos comuns em um site, como cabeçalhos, parágrafos, listas e imagens. Com o CSL, Ayrton e Edivan proporcionaram uma ferramenta inovadora que permite a criação de sites de forma mais intuitiva e rápida, ampliando as possibilidades para pessoas interessadas em entrar no mundo do desenvolvimento web.")
-        FIM
+        	TEXTO()
+			TITULO("Sobre o CSL")
+			PARAGRAFO("O CSL (Create Site Language) é um compilador que permite a transcrição da linguagem portuguesa para HTML. Esse compilador foi desenvolvido por Ayrton e Edivan. O objetivo principal do CSL é facilitar o processo de criação de sites, permitindo que pessoas que são fluentes em português possam desenvolver páginas web sem a necessidade de aprender linguagens complexas, como HTML e CSS. Com o CSL, é possível escrever o conteúdo de um site em um formato mais próximo da linguagem cotidiana, usando palavras e estruturas familiares. O compilador traduz essas instruções para HTML e CSS, que é a linguagem padrão para a criação de páginas web. Essa abordagem torna o desenvolvimento de sites mais acessível para iniciantes e para pessoas que não possuem um conhecimento aprofundado em programação. O CSL oferece uma camada de abstração que simplifica a criação de elementos comuns em um site, como cabeçalhos, parágrafos, listas e imagens. Com o CSL, Ayrton e Edivan proporcionaram uma ferramenta inovadora que permite a criação de sites de forma mais intuitiva e rápida, ampliando as possibilidades para pessoas interessadas em entrar no mundo do desenvolvimento web.")
+		FIM
 	FIM
 	PERNAS()
 		PARAGRAFO("© 2023 CSL (Create Site Language). Todos os direitos reservados à Ayrton e Edivan!")
