@@ -17,7 +17,7 @@ Descreva aqui como instalar a linguagem de programação em diferentes plataform
 ## Como utilizar o compilador
 O código fornecido é um exemplo de utilização do compilador CSL para criar uma página web. A linguagem utilizada no código é uma representação simplificada do CSL, demonstrando a facilidade de criação de elementos HTML utilizando o idioma português.
 
-java
+```
 Copy code
 CRIARPAGINA()
     CABECA()
@@ -41,6 +41,7 @@ CRIARPAGINA()
         PARAGRAFO("© 2023 CSL (Create Site Language). Todos os direitos reservados à Ayrton e Edivan!")
     FIM
 FIM
+```
 Explicação do Código
 O código é composto por três principais seções: CABECA(), CORPO(), e PERNAS(). Cada uma dessas seções representa partes diferentes da página web final.
 
