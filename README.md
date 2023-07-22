@@ -49,9 +49,9 @@ CRIARPAGINA(): Tem como objetivo identificar todo o corpo do código, assim, tud
 
 O código é composto por três principais seções: CABECA(), CORPO(), e PERNAS(). Cada uma dessas seções representa partes diferentes da página web final.
 
-CABECA(): Essa seção é responsável pela criação da cabeça da página, onde normalmente é incluído o título e as referências a arquivos CSS e JavaScript.
+CABECA(): Essa seção é responsável pela criação da parte do NavBar (MENU()), e para outras tags que ficaram no topo.
 
-CORPO(): Aqui é definido o corpo da página, que contém o conteúdo visível, como texto, imagens e outros elementos.
+CORPO(): Aqui é definido o corpo da página, que contém outros conteúdos visíveis, como texto, imagens e outros elementos.
 
 PERNAS(): Nesta parte, são incluídos os elementos finais da página, como rodapé, direitos autorais ou outras informações relevantes.
 
