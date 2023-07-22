@@ -10,13 +10,9 @@ Com o CSL, é possível escrever o conteúdo de um site em um formato mais próx
 
 O CSL oferece uma camada de abstração que simplifica a criação de elementos comuns em um site, como cabeçalhos, parágrafos, listas e imagens. Com essa ferramenta inovadora, Ayrton e Edivan possibilitaram a criação de sites de forma mais intuitiva e rápida, ampliando as possibilidades para pessoas interessadas em entrar no mundo do desenvolvimento web.
 
-## Instalação
-
-Descreva aqui como instalar a linguagem de programação em diferentes plataformas, por exemplo:
-
 ## Documentação
 
-# Como utilizar o compilador
+### Como utilizar o compilador
 O código fornecido é um exemplo de utilização do compilador CSL para criar uma página web. A linguagem utilizada no código é uma representação simplificada do CSL, demonstrando a facilidade de criação de elementos HTML utilizando o idioma português.
 
 ```CSL
