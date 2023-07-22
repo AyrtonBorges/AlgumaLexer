@@ -13,8 +13,11 @@ O CSL oferece uma camada de abstração que simplifica a criação de elementos 
 ## Documentação
 
 ### Como utilizar o compilador
-O código fornecido é um exemplo de utilização do compilador CSL para criar uma página web. A linguagem utilizada no código é uma representação simplificada do CSL, demonstrando a facilidade de criação de elementos HTML utilizando o idioma português.
-
+Para efetuar compilação, se usa o seguinte commando no terminal:
+```
+	java -jar CSL-1.0-jar-with-dependencies.jar entrada.txt saida.html 
+```
+O código fornecido abaixo é um exemplo de utilização do compilador CSL para criar uma página web. A linguagem utilizada no código é uma representação simplificada do CSL, demonstrando a facilidade de criação de elementos HTML utilizando o idioma português.
 ```CSL
 CRIARPAGINA()
     CABECA()
