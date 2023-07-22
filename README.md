@@ -4,7 +4,7 @@
 
 ## Introdução
 
-O CSL (Create Site Language) é um compilador que permite a transcrição da linguagem portuguesa para HTML. Desenvolvido por Ayrton e Edivan, o objetivo principal do CSL é facilitar o processo de criação de sites, permitindo que pessoas fluentes em português possam desenvolver páginas web sem a necessidade de aprender linguagens complexas, como HTML e CSS.
+O CSL (Create Site Language) é um compilador que permite a transcrição da linguagem portuguesa para HTML & CSS. Desenvolvido por Ayrton e Edivan, o objetivo principal do CSL é facilitar o processo de criação de sites, permitindo que pessoas fluentes em português possam desenvolver páginas web sem a necessidade de aprender linguagens complexas, como HTML e CSS.
 
 Com o CSL, é possível escrever o conteúdo de um site em um formato mais próximo da linguagem cotidiana, usando palavras e estruturas familiares. O compilador traduz essas instruções para HTML e CSS, que é a linguagem padrão para a criação de páginas web. Essa abordagem torna o desenvolvimento de sites mais acessível para iniciantes e para pessoas que não possuem um conhecimento aprofundado em programação.
 
