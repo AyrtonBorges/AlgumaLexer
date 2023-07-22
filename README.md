@@ -136,37 +136,8 @@ CRIARPAGINA()
 	FIM
 FIM
 ```
-
-## Contribuindo
-
-Ficaríamos felizes em receber contribuições para a linguagem de programação [Nome da Linguagem]! Se você quiser ajudar a melhorar a linguagem, corrigir bugs ou adicionar recursos, siga as diretrizes de contribuição no arquivo CONTRIBUTING.md deste repositório.
-
-## Problemas
-
-Se você encontrar problemas ao usar a linguagem, por favor, reporte-os no sistema de problemas do GitHub deste repositório.
-
-## Comunidade
-
-Compartilhe dicas, discussões e projetos relacionados à [Nome da Linguagem] na nossa comunidade:
-
-- [Fórum](link_para_fórum)
-- [Slack](link_para_slack)
-- [Reddit](link_para_reddit)
-
-## Licença
-
-Descreva aqui a licença sob a qual a linguagem de programação é distribuída. Por exemplo:
-
-Este projeto está licenciado sob a [Licença XYZ](link_para_licença). Leia o arquivo LICENSE.md para obter mais detalhes.
-
 ## Autores
 
-Liste os principais autores e desenvolvedores da linguagem de programação.
-
-## Agradecimentos
-
-Se você deseja agradecer a alguém ou a alguma organização que contribuiu significativamente para o desenvolvimento da linguagem, faça-o aqui.
-
+- Ayrton Claudio Almeida Borges
+- Edivan Azevedo
 ---
-
-Esse é apenas um modelo básico para um README de uma linguagem de programação no GitHub. Sinta-se à vontade para personalizá-lo conforme necessário para a sua linguagem, adicionando mais detalhes específicos e seções relevantes. Lembre-se de manter o README sempre atualizado, pois ele é a porta de entrada para os usuários interessados em sua linguagem de programação.
